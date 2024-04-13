@@ -1,0 +1,34 @@
+<?php
+// Подключение к базе данных
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "airport";
+
+// Создание подключения
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Проверка подключения
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Получение данных из формы
+$air_code = $_POST['air_code'];
+$decoding = $_POST['decoding'];
+
+// SQL-запрос для добавления записи в базу данных
+$sql = "INSERT INTO `airport_ref` (air_code, decoding)
+VALUES ('$air_code', '$decoding')";
+
+if ($conn->query($sql) === TRUE) {
+    // Закрытие подключения
+    $conn->close();
+
+    // Перенаправление на страницу с записями
+    header("Location: ../main/airport_ref.php");
+    exit();
+} else {
+    echo "Ошибка: " . $sql . "<br>" . $conn->error;
+}
+?>
