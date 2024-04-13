@@ -1,0 +1,39 @@
+<?php
+// Подключение к базе данных
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "airport";
+
+// Создание подключения
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Проверка подключения
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+mysqli_set_charset($conn, "utf8");
+
+
+// Получение данных из формы
+$id_flights = $_POST['id_flights'];
+$code_delay = $_POST['code_delay'];
+$describe_delay = $_POST['describe_delay'];
+$airport = $_POST['airport'];
+
+// SQL-запрос для добавления записи в базу данных
+$sql = "INSERT INTO delays (id_flights, code_delay, describe_delay, airport)
+VALUES ('$id_flights', '$code_delay', '$describe_delay', '$airport')";
+
+if ($conn->query($sql) === TRUE) {
+    // Закрытие подключения
+    $conn->close();
+
+    // Перенаправление на страницу с записями
+    header("Location: ../main/airlines.php");
+    exit();
+} else {
+    echo "Ошибка: " . $sql . "<br>" . $conn->error;
+}
+?>
