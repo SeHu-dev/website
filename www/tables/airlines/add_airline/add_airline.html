@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Добавить авиакомпанию</title>
+</head>
+<body>
+    <header>
+        <h1>Добавить авиакомпанию</h1>
+    </header>
+
+    <div class="container">
+        <form action="add_airline.php" method="POST">
+            <label for="name">Название авиакомпании:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="owner">Владелец:</label>
+            <input type="text" id="owner" name="owner"><br>
+            <label for="airport">Аэропорт:</label>
+            <input type="text" id="airport" name="airport"><br>
+            <label for="actual_address">Фактический адрес:</label>
+            <input type="text" id="actual_address" name="actual_address"><br>
+            <label for="legal_address">Юридический адрес:</label>
+            <input type="text" id="legal_address" name="legal_address"><br>
+            <label for="FIO_gendirector">Генеральный директор:</label>
+            <input type="text" id="FIO_gendirector" name="FIO_gendirector"><br>
+            <label for="contact_person">Контактное лицо:</label>
+            <input type="text" id="contact_person" name="contact_person"><br>
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone"><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>

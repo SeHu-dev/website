@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Добавить запись</title>
+</head>
+<body>
+    <header>
+        <h1>Добавить запись</h1>
+    </header>
+
+    <div class="container">
+        <form action="add_control.php" method="POST">
+            <label for="id">id записи</label>
+            <input type="text" id="id" name="id" required><br>
+            <label for="id_schedule">id в расписании:</label>
+            <input type="text" id="id_schedule" name="id_schedule"><br>
+            <label for="real_time_dpt">Реальное время вылета:</label>
+            <input type="text" id="real_time_dpt" name="real_time_dpt"><br>
+            <label for="date_dpt">Дата вылета:</label>
+            <input type="text" id="date_dpt" name="date_dpt"><br>
+            <label for="employee_ground">Сотрудник назменой службы:</label>
+            <input type="text" id="employee_ground" name="employee_ground"><br>
+            <label for="employee_service">Сотрудник службы обслуживания:</label>
+            <input type="text" id="employee_service" name="employee_service"><br>
+            <label for="delta_t">Время задержки (в сек):</label>
+            <input type="text" id="delta_t" name="delta_t"><br>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>

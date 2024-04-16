@@ -1,0 +1,57 @@
+<?php
+session_start();
+
+// Подключаемся к базе данных (замените параметры подключения на ваши)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "airport";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["username"]) && isset($_POST["password"])) {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        // Подготавливаем запрос на получение информации о пользователе
+        $stmt = $conn->prepare("SELECT username, role FROM users WHERE username = ? AND password = ?");
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows == 1) {
+            // Пользователь найден
+            $stmt->bind_result($db_username, $db_role);
+            $stmt->fetch();
+            $_SESSION["username"] = $db_username;
+            $_SESSION["role"] = $db_role;
+
+            // Перенаправляем на защищенную страницу в зависимости от роли
+            switch ($db_role) {
+                case "admin":
+                    header("Location: admin_dashboard.php");
+                    break;
+                case "user":
+                    header("Location: user_dashboard.php");
+                    break;
+                case "userup":
+                    header("Location: ../nav/nav.php");
+                    break;
+                default:
+                    header("Location: login.php"); // В случае неопределенной роли перенаправляем на страницу входа
+                    break;
+            }
+            exit;
+        } else {
+            // Если пользователь не найден, показываем сообщение об ошибке
+            $error_message = "Неправильное имя пользователя или пароль.";
+        }
+        $stmt->close();
+    }
+}
+$conn->close();
+?>

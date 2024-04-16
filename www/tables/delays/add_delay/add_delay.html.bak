@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Добавить задержку</title>
+</head>
+<body>
+    <header>
+        <h1>Добавить задержку</h1>
+    </header>
+
+    <div class="container">
+        <form action="add_delays.php" method="POST">
+            <label for="id_flights">id полета:</label>
+            <input type="text" id="id_flights" name="id_flights" required><br>
+            <label for="code_delay">Код задержки:</label>
+            <input type="text" id="code_delay" name="code_delay"><br>
+            <label for="describe_delay">Описание задержки:</label>
+            <input type="text" id="describe_delay" name="describe_delay"><br>
+            <label for="airport">Аэропорт:</label>
+            <input type="text" id="airport" name="airport"><br>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>
