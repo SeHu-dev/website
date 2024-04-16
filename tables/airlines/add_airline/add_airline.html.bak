@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление авиакомпании</title>
+</head>
+<body>
+    <h2>Добавление новой авиакомпании</h2>
+    <form action="add_airline.php" method="POST">
+        <label for="name">Название авиакомпании:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="owner">Владелец:</label>
+        <input type="text" id="owner" name="owner" required>
+        <!-- Добавьте другие поля формы здесь -->
+        <input type="submit" value="Добавить">
+    </form>
+    <!-- Ссылка для возврата на страницу с записями -->
+    <a href="airlines.php">Назад к списку авиакомпаний</a>
+</body>
+</html>

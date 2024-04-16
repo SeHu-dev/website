@@ -1,0 +1,31 @@
+<?php
+session_start(); // Начало сессии
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_SESSION['pdf_text'])) {
+        // Создаем новый PDF-документ
+        require('../../libs/tfpdf/tfpdf.php');
+        $pdf = new tFPDF();
+        $pdf->AddPage();
+        $pdf->AddFont('DejaVu', '', 'DejaVuSansCondensed.ttf', true);
+        $pdf->SetFont('DejaVu', '', 14);
+
+        // Разделяем текст на строки для добавления в PDF
+        $text_lines = explode("\n", $_SESSION['pdf_text']);
+        
+        // Добавляем каждую строку в PDF
+        foreach ($text_lines as $line) {
+            $pdf->MultiCell(0, 10, $line, 0, 'L');
+        }
+
+        // Сохраняем PDF-документ
+        $file_name = "flight_info_report.pdf";
+        $pdf->Output($file_name, 'D');
+
+        // Очищаем сессию после использования
+        unset($_SESSION['pdf_text']);
+    } else {
+        echo "Текст для генерации PDF не найден.";
+    }
+}
+?>

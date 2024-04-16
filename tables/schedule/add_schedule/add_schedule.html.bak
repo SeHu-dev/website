@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Добавить запись</title>
+</head>
+<body>
+    <header>
+        <h1>Добавить запись</h1>
+    </header>
+
+    <div class="container">
+        <form action="add_control.php" method="POST">
+            <label for="id">id записи</label>
+            <input type="text" id="id" name="id" required><br>
+            <label for="num_flights">Номер рейса:</label>
+            <input type="text" id="num_flights" name="num_flights"><br>
+            <label for="dest_air_code">Аэропорт прибытия:</label>
+            <input type="text" id="dest_air_code" name="dest_air_code"><br>
+            <label for="airline">Авиакомпания:</label>
+            <input type="text" id="airline" name="airline"><br>
+            <label for="time_dep">Время отправления:</label>
+            <input type="text" id="time_dep" name="time_dep"><br>
+            <label for="time_arr">Время прибытия:</label>
+            <input type="text" id="time_arr" name="time_arr"><br>
+            <label for="days_surgery">Дни оперирования:</label>
+            <input type="text" id="days_surgery" name="days_surgery"><br>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>

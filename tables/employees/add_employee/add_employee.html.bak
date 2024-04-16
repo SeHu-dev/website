@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Добавить сотрудника</title>
+</head>
+<body>
+    <header>
+        <h1>Добавить сотрудника</h1>
+    </header>
+
+    <div class="container">
+        <form action="add_employees.php" method="POST">
+            <label for="pers_num">Табельный номер:</label>
+            <input type="text" id="pers_num" name="pers_num" required><br>
+            <label for="last_name">Фамилия:</label>
+            <input type="text" id="last_name" name="last_name"><br>
+            <label for="first_name">Имя:</label>
+            <input type="text" id="first_name" name="first_name"><br>
+            <label for="father_name">Отчество:</label>
+            <input type="text" id="father_name" name="father_name"><br>
+			<label for="dob">Дата рождения:</label>
+            <input type="text" id="dob" name="dob"><br>
+			<label for="sex">Пол:</label>
+            <input type="text" id="sex" name="sex"><br>
+			<label for="education">Образование:</label>
+            <input type="text" id="education" name="education"><br>
+			<label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone"><br>
+			<label for="corps">Подразделение:</label>
+            <input type="text" id="corps" name="corps"><br>
+			<label for="job">Должность:</label>
+            <input type="text" id="job" name="job"><br>
+			<label for="passport">Серия и номер паспорта:</label>
+            <input type="text" id="passport" name="passport"><br>
+			<label for="passport_date">Дата выдачи паспорта:</label>
+            <input type="text" id="passport_date" name="passport_date"><br>
+			<label for="passport_inst">Кем выдан паспорт:</label>
+            <input type="text" id="passport_inst" name="passport_inst"><br>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>

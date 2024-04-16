@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Добавить аэропорт</title>
+</head>
+<body>
+    <header>
+        <h1>Добавить аэропорт</h1>
+    </header>
+
+    <div class="container">
+        <form action="add_airline.php" method="POST">
+            <label for="air_code">Код аэропорта:</label>
+            <input type="text" id="air_code" name="air_code" maxlength="3" required><br>
+            <label for="decoding">Расшифровка:</label>
+            <input type="text" id="decoding" name="decoding"><br>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>
