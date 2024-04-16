@@ -12,7 +12,6 @@
 		<button onclick="location.href='logout.php'" id="logoutButton">Выход</button>
 	</header>
 
-
     <section id="reports">
         <h2>Отчеты</h2>
         <button onclick="location.href='../reports/summary/delays_summary.php'">Сводка по задержкам рейсов</button>
@@ -29,6 +28,17 @@
         <button onclick="location.href='../tables/schedule/main/schedule.php'">Расписание</button>
         <button onclick="location.href='../tables/airport_ref/main/airport_ref.php'">Справочник аэропортов</button>
         <button onclick="location.href='../tables/airlines/main/airlines.php'">Авиакомпании</button>
+    </section>
+
+    <section id="queries">
+        <h2>Запросы</h2>
+        <button onclick="location.href='../requests/delay_code/delay_code.php'">Код задержки за период</button>
+        <button onclick="location.href='../requests/flight_delay_inquiries/flight_delay_inquiries.php'">Частые задержки: авиакомпания</button>
+        <button onclick="location.href='../requests/flight_delay_inquiries_avg_time/flight_delay_inquiries_avg_time.php'">Частые задержки: причина</button>
+        <button onclick="location.href='../requests/flight_delay_distribution_by_year/flight_delay_distribution_by_year.php'">Распределение задержек</button>
+		
+		
+        <!-- Добавьте здесь дополнительные кнопки запросов -->
     </section>
 
 </body>

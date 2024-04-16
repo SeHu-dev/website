@@ -1,7 +1,4 @@
-<?php
-session_start(); // Начало сессии
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -26,14 +23,10 @@ session_start(); // Начало сессии
 
             <input type="submit" value="Показать">
         </form>
+
         <?php
-        // Проверяем, был ли установлен код задержки
-        if (isset($_SESSION['delay_code'])) {
-            echo "<h2>Код задержки, встречающийся чаще всего за выбранный период:</h2>";
-            echo "<p>{$_SESSION['delay_code']}</p>";
-            // Удаляем значение из сессии после использования
-            unset($_SESSION['delay_code']);
-        }
+        // Подключаем файл с обработкой данных
+        include 'flight_delay_inquiries_script.php';
         ?>
     </div>
 </body>

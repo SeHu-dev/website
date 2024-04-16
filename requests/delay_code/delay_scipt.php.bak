@@ -1,0 +1,31 @@
+<?php
+session_start(); // Начало сессии
+
+// Проверяем, были ли отправлены данные из формы
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Получаем значения из формы
+    $start_date = $_GET['start_date'];
+    $end_date = $_GET['end_date'];
+
+
+    $query = "SELECT code_delay FROM delays WHERE date BETWEEN '$start_date' AND '$end_date' GROUP BY code_delay ORDER BY COUNT(*) DESC LIMIT 1";
+    $result = mysqli_query($connection, $query);
+
+
+    // Подготавливаем текст для отчета (заголовок)
+    $report_text = "Заголовок: Код задержки, встречающийся чаще всего за период с $start_date до $end_date";
+
+    // Подготавливаем текст для отчета (данные из базы данных)
+    // while ($row = mysqli_fetch_assoc($result)) {
+    //     $report_text .= "\n" . $row['column_name'];
+    //     // Здесь добавляйте другие данные, которые хотите включить в отчет
+    // }
+
+    // Сохраняем текст для отчета в сессию
+    $_SESSION['pdf_text'] = $report_text;
+
+    // Перенаправляем пользователя на эту же страницу для вывода результатов
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+?>
