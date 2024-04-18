@@ -26,7 +26,7 @@
 
         <?php
         // Подключаем файл с обработкой данных
-        include 'delay_script.php';
+        include 'flight_delay_inquiries_script.php';
         ?>
     </div>
 </body>

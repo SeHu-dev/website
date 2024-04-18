@@ -68,7 +68,7 @@
                 formData.append(inputs[i].name, inputs[i].value);
             }
 
-            fetch('update_delay.php', {
+            fetch('update_employee.php', {
                 method: 'POST',
                 body: formData
             })

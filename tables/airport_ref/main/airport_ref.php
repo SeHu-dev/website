@@ -7,34 +7,33 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Управление аэропортами</title>
+    <title>Управление справочником аэропортов</title>
 </head>
 <body>
     <header>
         <button onclick="location.href='../../../nav/nav.php'" id="homeButton">Навигация</button>
-        <h1>Управление аэропортами</h1>
+        <h1>Управление справочником аэропортов</h1>
         <nav>
             <ul>
-                <li><button onclick="location.href='airports.php'">Аэропорты</button></li>
-                <li><button onclick="location.href='delays_dictionary.php'">Справочник задержек</button></li>
-                <li><button onclick="location.href='employees.php'">Сотрудники</button></li>
-                <li><button onclick="location.href='flight_control.php'">Контроль полетов</button></li>
-                <li><button onclick="location.href='schedule.php'">Расписание</button></li>
-                <li><button onclick="location.href='../../airlines/main/airlines.php'">Авиакомпании</button></li>
+				<button onclick="location.href='../../delays/delays/main/delays.php'">Задержки</button>
+				<button onclick="location.href='../../employees/employees/main/employees.php'">Сотрудники</button>
+				<button onclick="location.href='../../flight_control/flight_control/main/controls.php'">Контроль полетов</button>
+				<button onclick="location.href='../../schedule/schedule/main/schedule.php'">Расписание</button>
+				<button onclick="location.href='../../airport_ref/airport_ref/main/airport_ref.php'">Справочник аэропортов</button>
+				<button onclick="location.href='../../airlines/airlines/main/airlines.php'">Авиакомпании</button>
             </ul>
         </nav>
     </header>
 
 	<div style="height: 40px;"> <!-- Пример высоты 40px -->
     <?php
-    if(isset($_SESSION['role']) && $_SESSION['role'] == 'user') {
+    if(isset($_SESSION['role']) && $_SESSION['role'] !== 'user') {
         echo "<button onclick='location.href=\"../add_airport_ref/add_airport.html\"'>Добавить новый аэропорт</button>";
     }
     ?>
     </div>
-
-
-    <h2>Список авиакомпаний</h2>
+	
+    <h2>Список аэропортов</h2>
     <table>
         <tbody>
             <?php include 'get_airports.php'; ?>

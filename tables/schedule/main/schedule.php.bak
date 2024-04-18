@@ -22,7 +22,7 @@
     </header>
 
     <div>
-        <button onclick="location.href='../add_control/add_control.html'">Добавить новую запись</button>
+        <button onclick="location.href='../add_schedule/add_schedule.html'">Добавить новую запись</button>
     </div>
 
     <h2>Список записей</h2>
@@ -68,7 +68,7 @@
                 formData.append(inputs[i].name, inputs[i].value);
             }
 
-            fetch('update_control.php', {
+            fetch('update_schedule.php', {
                 method: 'POST',
                 body: formData
             })

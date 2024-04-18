@@ -1,7 +1,4 @@
-<?php
-session_start(); // Начало сессии
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -29,7 +26,7 @@ session_start(); // Начало сессии
 
         <?php
         // Подключаем файл с обработкой данных
-        include 'delay_script.php';
+        include 'flight_delay_inquiries_avg_time_script.php';
         ?>
     </div>
 </body>

@@ -22,7 +22,7 @@
     </header>
 
     <div>
-        <button onclick="location.href='../add_control/add_cotrol.html'">Добавить новую запись</button>
+        <button onclick="location.href='../add_control/add_control.html'">Добавить новую запись</button>
     </div>
 
     <h2>Список записей</h2>

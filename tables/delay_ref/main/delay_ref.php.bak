@@ -31,12 +31,7 @@ session_start();
     }
     ?>
     </div>
-
-
-    <div>
-        <button onclick="location.href='../add_delay_ref/add_delay.html'">Добавить новую задержку</button>
-    </div>
-
+	
     <h2>Список задержек</h2>
     <table>
         <tbody>

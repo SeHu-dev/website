@@ -8,12 +8,12 @@ session_start(); // Начало сессии
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylEs.css">
-    <title>Запросы по задержкам</title>
+    <title>Код задержки за период</title>
 </head>
 <body>
     <header>
         <button onclick="location.href='../../nav/nav.php'" id="homeButton">Домой</button>
-        <h1>Запросы по задержкам</h1>
+        <h1>Код задержки за период</h1>
     </header>
     
     <div class="content-wrapper">

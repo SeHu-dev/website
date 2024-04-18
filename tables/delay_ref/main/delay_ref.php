@@ -15,11 +15,13 @@ session_start();
         <h1>Управление справочником задержек</h1>
         <nav>
             <ul>
-                <li><button onclick="location.href='airports.php'">Аэропорты</button></li>
-                <li><button onclick="location.href='employees.php'">Сотрудники</button></li>
-                <li><button onclick="location.href='flight_control.php'">Контроль полетов</button></li>
-                <li><button onclick="location.href='schedule.php'">Расписание</button></li>
-                <li><button onclick="location.href='../../airlines/main/airlines.php'">Авиакомпании</button></li>
+				<button onclick="location.href='../../delays/main/delays.php'">Задержки</button>
+				<button onclick="location.href='../../employees/main/employees.php'">Справочник задержек</button>
+				<button onclick="location.href='../../employees/main/employees.php'">Сотрудники</button>
+				<button onclick="location.href='../../flight_control/main/flight_control.php'">Контроль полетов</button>
+				<button onclick="location.href='../../schedule/main/schedule.php'">Расписание</button>
+				<button onclick="location.href='../../airport_ref/main/airport_ref.php'">Справочник аэропортов</button>
+				<button onclick="location.href='../../airlines/main/airlines.php'">Авиакомпании</button>
             </ul>
         </nav>
     </header>

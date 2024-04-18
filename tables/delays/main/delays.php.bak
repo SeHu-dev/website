@@ -33,10 +33,6 @@ session_start();
     ?>
     </div>
 
-    <div>
-        <button onclick="location.href='../add_delay/add_delay.html'">Добавить новую задержку</button>
-    </div>
-
     <h2>Список авиакомпаний</h2>
     <table>
         <tbody>
